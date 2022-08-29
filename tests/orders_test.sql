@@ -1,0 +1,1 @@
+select sum(BANK_TRANSFER_AMOUNT) as amt  from {{ref('orders')}} having amt < 100

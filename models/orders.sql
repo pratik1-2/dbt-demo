@@ -43,7 +43,9 @@ final as (
 
         {% endfor -%}
 
-        order_payments.total_amount as amount
+        order_payments.total_amount as amount,
+
+        {{payableamt('total_amount', 10 )}} as discounted_amt
 
     from orders
 
