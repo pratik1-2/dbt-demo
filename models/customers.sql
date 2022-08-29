@@ -54,7 +54,8 @@ final as (
         customer_orders.first_order,
         customer_orders.most_recent_order,
         customer_orders.number_of_orders,
-        customer_payments.total_amount as customer_lifetime_value
+        customer_payments.total_amount as customer_lifetime_value,
+        {{ dbt_utils.surrogate_key(['customers.customer_id', 'customers.first_name','customers.last_name']) }} as customer_surrogate_key
 
     from customers
 
