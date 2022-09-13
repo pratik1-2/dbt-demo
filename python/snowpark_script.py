@@ -2,14 +2,15 @@ import os
 from snowflake.snowpark import Session
 
 connection_parameters = {
-  "account": "qb81222.ap-southeast-1",
-  "user": "transform_user",
-  "password": "Transform_password@11",
-  "role": "TRANSFROM_ROLE",
+  "account": "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}",
+  "user": "{ env_var('DBT_SNOWFLAKE_USERNAME') }}",
+  "password": "{{ env_var('DBT_SNOWFLAKE_PW') }}",
+  "role": "{{ env_var('DBT_SNOWFLAKE_ROLE') }}",
   "warehouse": "COMPUTE_WH",
   "database": "analytics",
   "schema": "dbt"
 }
+
 
 session = Session.builder.configs(connection_parameters).create()
 
