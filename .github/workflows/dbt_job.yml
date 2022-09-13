@@ -33,5 +33,5 @@ jobs:
     # dbt related commands here - run use --target prod/dev to run for specific environments
     - name: Run dbt models
       run:  |
-       fal run
-       dbt run 
+       dbt run
+       fal run 

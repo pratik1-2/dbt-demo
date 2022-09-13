@@ -32,7 +32,7 @@ models:
     meta:
       fal:
         scripts:
-         - python/ snowpark_script.py 
+         - python/snowpark_script.py 
 
   - name: orders
     description: This table has basic information about orders, as well as some derived facts based on payments
