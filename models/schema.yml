@@ -29,6 +29,11 @@ models:
       - name: total_order_amount
         description: Total value (AUD) of a customer's orders
 
+    meta:
+      fal:
+        scripts:
+         - python/ snowpark_script.py 
+
   - name: orders
     description: This table has basic information about orders, as well as some derived facts based on payments
 

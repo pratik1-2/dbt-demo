@@ -26,8 +26,12 @@ jobs:
     - name: Install dependencies
       run: |
         pip install dbt-snowflake
+        pip install snowflake-snowpark-python
+        pip install fal
         dbt deps
 
     # dbt related commands here - run use --target prod/dev to run for specific environments
     - name: Run dbt models
-      run: dbt run
+      run:  |
+       fal run
+       dbt run 
